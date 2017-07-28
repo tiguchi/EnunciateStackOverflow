@@ -1,0 +1,39 @@
+{
+  "swagger": "2.0",
+  "info" : {
+    "version" : "0.0.0",
+    "title" : "Web Service API"
+  },
+  "schemes" : [],
+  "tags" : [
+    {
+      "name" : "RootResource"
+    }
+  ],
+  "definitions" : {
+  },
+  "paths": {
+    "\/users" : {
+      "get" : {
+        "tags" : [ "RootResource" ],
+        "summary" : "Gets a stream of all resource objects.",
+        "description" : "Gets a stream of all resource objects.",
+        "operationId" : "resource_RootResource_UsersResource_getAll_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "Resource object stream.",
+"type" : "string"
+            },
+            "examples" : {
+            },
+            "description" : "Resource object stream."
+          }
+        }
+      }
+    }
+  }
+}

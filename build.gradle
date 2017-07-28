@@ -1,0 +1,26 @@
+plugins {
+    id 'com.webcohesion.enunciate' version '2.9.1'
+}
+
+apply plugin: 'java'
+apply plugin: 'com.webcohesion.enunciate'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.apache.cxf:cxf-rt-frontend-jaxrs:3.1.12'
+}
+
+tasks.enunciate {
+    File enunciateDistDir = file("dist/docs/api")
+    
+    doFirst {
+        enunciateDistDir.deleteDir()
+        enunciateDistDir.mkdirs()
+    }
+    
+    configFileName = file("src/main/resources/enunciate.xml")  
+    export("docs", enunciateDistDir)
+}
